@@ -11,7 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Column(
         children: [
           Flexible(
@@ -30,11 +30,53 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Flexible(
             flex: 3,
-            child: Container(),
+            child: Center(
+              child: IconButton(
+                color: Theme.of(context).cardColor,
+                iconSize: 120,
+                onPressed: () {},
+                icon: const Icon(Icons.play_circle_outline),
+              ),
+            ),
           ),
           Flexible(
             flex: 1,
-            child: Container(),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Pomodoros',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 20,
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .displayLarge!
+                                  .color),
+                        ),
+                        Text(
+                          '0',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 58,
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .displayLarge!
+                                  .color),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
